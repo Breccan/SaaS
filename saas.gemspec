@@ -8,8 +8,9 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
   s.version = "0.0.1"
 
-  s.add_dependency "rails", "~> 3.1.0"
+  s.add_dependency "rails", "~> 3.1.0.rc1"
   s.add_dependency "activemerchant", ">= 1.9.4"
   s.add_development_dependency 'sqlite3'
   s.add_development_dependency "rspec-rails", "~> 2.5"
+  s.add_development_dependency "devise", :path => "../devise"
 end
