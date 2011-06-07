@@ -7,5 +7,7 @@ class CreateAccounts < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :accounts, [:user_id, :user_type]
   end
 end
