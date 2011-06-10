@@ -10,7 +10,49 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110604064344) do
+ActiveRecord::Schema.define(:version => 20110610070032) do
+
+  create_table "accounts", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "user_type"
+    t.string   "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "accounts", ["user_id", "user_type"], :name => "index_accounts_on_user_id_and_user_type"
+
+  create_table "payments", :force => true do |t|
+    t.integer  "amount"
+    t.string   "state"
+    t.string   "protocol"
+    t.integer  "account_id"
+    t.text     "details"
+    t.integer  "gateway_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "subscription_addresses", :force => true do |t|
+    t.integer  "account_id"
+    t.string   "town"
+    t.string   "city"
+    t.string   "postcode"
+    t.string   "country"
+    t.string   "line1"
+    t.string   "line2"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "subscriptions", :force => true do |t|
+    t.integer  "account_id"
+    t.string   "name"
+    t.integer  "base_cost"
+    t.string   "period"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
