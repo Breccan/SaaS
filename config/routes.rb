@@ -4,4 +4,9 @@ Saas::Engine.routes.draw do
   resources :payments
   resources :subscriptions
 
+  namespace :admin do
+    resources :accounts
+    resources :subscriptions
+  end
+
 end
