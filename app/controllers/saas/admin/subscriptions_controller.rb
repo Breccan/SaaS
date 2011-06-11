@@ -3,11 +3,11 @@ module Saas
     class SubscriptionsController < Saas::ApplicationController
 
       def index
-
+        @subscriptions = Subscription.all
       end
 
       def new
-
+        @subscription = Subscription.new
       end
 
       def create
