@@ -6,6 +6,14 @@ PATH
       rails (~> 3.1.0.rc1)
 
 PATH
+  remote: ../../../active_merchant/
+  specs:
+    activemerchant (1.15.0)
+      activesupport (>= 2.3.11)
+      braintree (>= 2.0.0)
+      builder (>= 2.0.0)
+
+PATH
   remote: ../../../devise
   specs:
     devise (1.4.0.dev)
@@ -31,10 +39,6 @@ GEM
       rack-test (~> 0.6.0)
       sprockets (~> 2.0.0.beta.8)
       tzinfo (~> 0.3.27)
-    activemerchant (1.15.0)
-      activesupport (>= 2.3.8)
-      braintree (>= 2.0.0)
-      builder (>= 2.0.0)
     activemodel (3.1.0.rc1)
       activesupport (= 3.1.0.rc1)
       bcrypt-ruby (~> 2.1.4)
@@ -108,6 +112,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activemerchant!
   devise!
   rails (= 3.1.0.rc1)
   saas!
